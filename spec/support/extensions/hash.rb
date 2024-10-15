@@ -1,6 +1,6 @@
 class Hash
 
   def to_json
-    MultiJson.dump(self, options)
+    MultiJson.dump(self)
   end
 end

@@ -8,6 +8,7 @@ describe Her::JsonApi::Model do
         stub.get("/users/1") do
           [
             200,
+            {},
             {
               data: {
                 id:    1,
