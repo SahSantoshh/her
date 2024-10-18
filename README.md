@@ -14,6 +14,14 @@
 </p>
 
 ---
+## This Fork Changes
+
+1. This fork is just to support latest version of Faraday, activemodel and activesupport. Also upgraded it's dependencies to latest versions to support `ruby-3.1.1`.
+2. Also includes changes suggested:
+   1. Fix infinite loop when parsing nested associations fetched from [remi#539](https://github.com/remi/her/pull/539) by [gordysc](https://github.com/gordysc)
+   2. remove deprecated ActiveSupport::ProxyObject [remi#552](https://github.com/remi/her/pull/552) by [kulkam](https://github.com/kulkam)
+
+---
 
 ## Installation
 
