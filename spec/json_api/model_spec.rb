@@ -17,7 +17,6 @@ describe Her::JsonApi::Model do
                   name: "Roger Federer"
                 }
               }
-
             }.to_json
           ]
         end

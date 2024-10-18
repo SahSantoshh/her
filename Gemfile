@@ -8,3 +8,7 @@ else
   gem 'activemodel', '~> 3.2.0'
   gem 'activesupport', '~> 3.2.0'
 end
+
+group :development, :test do
+  gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
+end
