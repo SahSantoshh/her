@@ -10,5 +10,5 @@ else
 end
 
 group :development, :test do
-  gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
+  gem 'byebug', '~> 11.1', '>= 11.1.3'
 end

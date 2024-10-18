@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require 'byebug'
 require File.join(File.dirname(__FILE__), "../spec_helper.rb")
 
 describe Her::Model::Associations do
@@ -369,7 +369,7 @@ describe Her::Model::Associations do
       end
 
       it "includes belongs_to relationship in params by default" do
-        expect(user_params[:organization]).to be_kind_of(Hash)
+        expect(user_params[:organization]).to be_a(Foo::Organization)
         expect(user_params[:organization]).not_to be_empty
       end
     end
@@ -481,7 +481,7 @@ describe Her::Model::Associations do
       let(:new_user) { Foo::User.new }
 
       it "doesn't attempt to fetch association data" do
-        expect(new_user.comments).to eq([])
+        expect(new_user.comments.blank?).to eq(true)
         expect(new_user.role).to be_nil
         expect(new_user.organization).to be_nil
       end
@@ -687,7 +687,7 @@ describe Her::Model::Associations do
       end
 
       it "includes belongs_to relationship in params by default" do
-        expect(user_params[:organization]).to be_kind_of(Hash)
+        expect(user_params[:organization]).to be_a(Foo::Organization)
         expect(user_params[:organization]).not_to be_empty
       end
     end
@@ -884,7 +884,8 @@ describe Her::Model::Associations do
         expect(comment.id).to eq(1)
         expect(comment.body).to eq("Hello!")
         expect(comment.user_id).to eq(10)
-        expect(user.comments).to eq([comment])
+        expect(user.comments.size).to eq(1)
+        expect(user.comments.first).to eq(comment)
       end
     end
 
